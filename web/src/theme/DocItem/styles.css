@@ -1,0 +1,32 @@
+/* 文档内容过渡效果 - 仅应用于主内容区域 */
+.doc-content-transition {
+  position: relative;
+}
+
+/* 确保文章内容在全局过渡系统中正确显示 */
+.doc-content-transition article {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* 确保侧边栏不受内容过渡影响 */
+.menu, .navbar, .navbar-sidebar, .theme-doc-sidebar-container, .theme-doc-toc-desktop {
+  transition: none !important;
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+/* 特殊元素过渡效果 - 代码块 */
+.doc-content-transition pre {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.doc-content-transition pre:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* 下一页/上一页导航 */
+.pagination-nav {
+  position: relative;
+} 

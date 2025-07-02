@@ -1,0 +1,47 @@
+/* 侧边栏包装器样式 */
+.doc-sidebar-wrapper {
+  position: relative;
+  height: 100%;
+}
+
+/* 自定义垂直分隔线，确保不会干扰点击 */
+.sidebar-divider {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.1);
+  pointer-events: none !important;
+  z-index: 0;
+}
+
+/* 移除原始侧边栏可能的干扰元素 */
+:global(.theme-doc-sidebar-container::after),
+:global(.theme-doc-sidebar-container::before),
+:global(.theme-doc-sidebar-menu::after),
+:global(.theme-doc-sidebar-menu::before) {
+  content: none !important;
+}
+
+/* 确保侧边栏内容位于分隔线之上 */
+:global(.menu) {
+  position: relative;
+  z-index: 1;
+}
+
+/* 禁用所有可能的伪元素点击 */
+[class*="sidebar"]::after,
+[class*="sidebar"]::before,
+[class*="menu"]::after,
+[class*="menu"]::before {
+  pointer-events: none !important;
+}
+
+/* 增加导航项目可点击区域的清晰度 */
+:global(.menu__link) {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+} 

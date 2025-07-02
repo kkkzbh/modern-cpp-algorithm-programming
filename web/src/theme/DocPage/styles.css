@@ -1,0 +1,48 @@
+/* 移除文档页面的所有分隔线 */
+.doc-page-no-separator * {
+  border-right: none !important;
+  border-left: none !important;
+}
+
+/* 移除文档页面中的所有伪元素分隔线 */
+.doc-page-no-separator *::after,
+.doc-page-no-separator *::before {
+  display: none !important;
+  width: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  border: none !important;
+}
+
+/* 直接覆盖Docusaurus的边栏分隔线样式 */
+:global(.theme-doc-sidebar-container) {
+  border-right: none !important;
+  box-shadow: none !important;
+  position: relative;
+}
+
+/* 移除侧边栏容器的伪元素 */
+:global(.theme-doc-sidebar-container::before),
+:global(.theme-doc-sidebar-container::after) {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+}
+
+/* 确保行布局没有任何边框 */
+:global(.row) {
+  border: none !important;
+}
+
+:global(.row .col) {
+  border: none !important;
+}
+
+/* 强制移除所有可能的垂直分隔线 */
+:global([style*="width: 1px"]),
+:global([style*="border-right"]) {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  border: none !important;
+} 

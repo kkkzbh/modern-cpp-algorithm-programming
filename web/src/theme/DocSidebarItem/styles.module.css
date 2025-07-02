@@ -1,0 +1,47 @@
+.sidebarItemWrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  z-index: 1;
+}
+
+/* 确保分隔线不会干扰点击 */
+.sidebarItemWrapper::after {
+  content: none !important;
+  pointer-events: none !important;
+}
+
+/* 移除所有下划线效果 */
+:global(.menu__link) {
+  position: relative;
+  z-index: 2;
+}
+
+:global(.menu__link::after),
+:global(.menu__link:hover::after),
+:global(.menu__link--active::after) {
+  display: none !important;
+  content: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+:global(.menu__list) {
+  position: relative;
+}
+
+:global(.menu__list)::after {
+  content: none !important;
+}
+
+/* 移除左侧垂直线的事件响应 */
+:global(.theme-doc-sidebar-container)::before,
+:global(.theme-doc-sidebar-container)::after {
+  pointer-events: none !important;
+}
+
+/* 确保主内容容器的任何伪元素不会干扰点击 */
+:global(.main-wrapper > *::before),
+:global(.main-wrapper > *::after) {
+  pointer-events: none !important;
+} 

@@ -1,0 +1,34 @@
+/* MDX页面内容过渡效果 - 仅应用于主内容区域 */
+.mdx-content-transition {
+  position: relative;
+}
+
+/* 确保容器内容在全局过渡系统中正确显示 */
+.mdx-content-transition .container {
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+/* 确保页面其他部分不受内容过渡影响 */
+.navbar, .sidebar, .menu, .navbar-sidebar, .theme-doc-sidebar-container {
+  transition: none !important;
+  opacity: 1 !important;
+  animation: none !important;
+}
+
+/* 特殊元素样式 - 卡片 */
+.mdx-content-transition .card {
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.mdx-content-transition .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 主页元素样式 */
+.mdx-content-transition .hero {
+  position: relative;
+} 

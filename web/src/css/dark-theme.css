@@ -1,0 +1,74 @@
+/**
+ * Dark theme customization with #0D1118 background and low contrast
+ */
+
+html[data-theme='dark'] {
+  /* Core background colors */
+  --ifm-background-color: #0D1118 !important;
+  --ifm-background-surface-color: #0D1118 !important;
+  
+  /* Secondary UI elements */
+  --ifm-hover-overlay: rgba(255, 255, 255, 0.05) !important;
+  --ifm-code-background: #161b24 !important;
+  --ifm-pre-background: #161b24 !important;
+  --ifm-table-stripe-background: rgba(255, 255, 255, 0.03) !important;
+  
+  /* Contrast elements */
+  --ifm-contrast-background-color: #161b24 !important;
+  --ifm-contrast-foreground-color: #8b949e !important;
+  
+  /* Text colors for low contrast */
+  --ifm-font-color-base: #c9d1d9 !important;
+  --ifm-font-color-secondary: #8b949e !important;
+  --ifm-font-color-base-inverse: #e6edf3 !important;
+  
+  /* Border colors */
+  --ifm-toc-border-color: rgba(255, 255, 255, 0.05) !important;
+  --ifm-color-emphasis-300: rgba(255, 255, 255, 0.05) !important;
+  
+  /* Force background color */
+  background-color: #0D1118 !important;
+}
+
+/* Force background on body element */
+html[data-theme='dark'] body {
+  background-color: #0D1118 !important;
+}
+
+/* Force background on main UI elements */
+html[data-theme='dark'] .navbar,
+html[data-theme='dark'] .main-wrapper,
+html[data-theme='dark'] .theme-doc-sidebar-container,
+html[data-theme='dark'] aside,
+html[data-theme='dark'] main,
+html[data-theme='dark'] div[class*="docSidebarContainer"],
+html[data-theme='dark'] div[class*="docMainContainer"],
+html[data-theme='dark'] div[class*="docItemCol"],
+html[data-theme='dark'] div[class*="docItemContainer"],
+html[data-theme='dark'] div[class*="docPage"],
+html[data-theme='dark'] article,
+html[data-theme='dark'] header,
+html[data-theme='dark'] footer {
+  background-color: #0D1118 !important;
+}
+
+/* Code blocks with lower contrast */
+html[data-theme='dark'] pre,
+html[data-theme='dark'] code {
+  background-color: #161b24 !important;
+}
+
+/* Sidebar items with lower contrast */
+html[data-theme='dark'] .menu__link--active {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Table styling */
+html[data-theme='dark'] table {
+  border-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Card background colors */
+html[data-theme='dark'] .card {
+  background-color: #161b24 !important;
+} 

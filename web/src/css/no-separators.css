@@ -1,0 +1,77 @@
+/* 全局样式重置，移除所有分隔线 */
+
+/* 移除所有边框 */
+.theme-doc-sidebar-container,
+.theme-doc-sidebar-menu,
+.main-wrapper,
+.row,
+.col,
+aside,
+main,
+div[class*="docSidebarContainer"],
+div[class*="docMainContainer"],
+div[class*="docItemCol"],
+div[class*="docItemContainer"] {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* 移除所有伪元素 */
+.theme-doc-sidebar-container::before,
+.theme-doc-sidebar-container::after,
+.theme-doc-sidebar-menu::before,
+.theme-doc-sidebar-menu::after,
+.main-wrapper::before,
+.main-wrapper::after,
+.row::before,
+.row::after,
+.col::before,
+.col::after,
+aside::before,
+aside::after,
+main::before,
+main::after,
+div[class*="docSidebarContainer"]::before,
+div[class*="docSidebarContainer"]::after,
+div[class*="docMainContainer"]::before,
+div[class*="docMainContainer"]::after,
+div[class*="docItemCol"]::before,
+div[class*="docItemCol"]::after,
+div[class*="docItemContainer"]::before,
+div[class*="docItemContainer"]::after {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  content: none !important;
+}
+
+/* 移除内联样式可能添加的垂直线 */
+[style*="width:1px"],
+[style*="width: 1px"],
+[style*="border-right:"],
+[style*="border-right: "],
+[style*="border-left:"],
+[style*="border-left: "] {
+  border: none !important;
+  width: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 确保行和列之间没有分隔 */
+.row {
+  margin: 0 !important;
+}
+
+.row > .col {
+  padding: 0 !important;
+}
+
+/* 移除Docusaurus可能用于分隔的背景图 */
+[style*="background"],
+[style*="linear-gradient"] {
+  background: transparent !important;
+  background-image: none !important;
+} 

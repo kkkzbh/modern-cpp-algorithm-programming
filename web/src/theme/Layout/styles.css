@@ -1,0 +1,61 @@
+/* 确保所有伪元素不会干扰点击行为 */
+*::before, *::after {
+  pointer-events: none !important;
+}
+
+/* 特别处理文档侧边栏容器 */
+.theme-doc-sidebar-container {
+  position: relative;
+  z-index: 1;
+}
+
+/* 确保内容区域的任何伪元素不会影响点击 */
+main::before, main::after,
+article::before, article::after {
+  pointer-events: none !important;
+}
+
+/* 修复网站垂直分隔线问题 */
+.docs-wrapper::after, 
+.docs-wrapper::before {
+  content: none !important;
+}
+
+/* 确保侧边栏可正常点击 */
+.menu__list, .menu__link {
+  position: relative;
+  z-index: 2;
+}
+
+/* 确保Markdown内容中的任何互动元素正常工作 */
+.markdown a, 
+.markdown button, 
+.markdown [role="button"] {
+  position: relative;
+  z-index: 1;
+}
+
+/* Layout specific dark mode styles */
+:root[data-theme='dark'] {
+  --ifm-background-color: #0D1118 !important;
+}
+
+/* Direct style on HTML elements for maximum specificity */
+html[data-theme='dark'],
+html[data-theme='dark'] body,
+html[data-theme='dark'] div#__docusaurus {
+  background-color: #0D1118 !important;
+}
+
+/* Override for main content areas */
+html[data-theme='dark'] main,
+html[data-theme='dark'] aside,
+html[data-theme='dark'] nav,
+html[data-theme='dark'] .navbar,
+html[data-theme='dark'] .main-wrapper,
+html[data-theme='dark'] div[class*='docRoot'],
+html[data-theme='dark'] div[class*='docPage'],
+html[data-theme='dark'] div[class*='docSidebar'],
+html[data-theme='dark'] div[class*='docsWrapper'] {
+  background-color: #0D1118 !important;
+} 

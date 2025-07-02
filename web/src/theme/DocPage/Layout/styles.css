@@ -1,0 +1,65 @@
+/* 移除文档页面的垂直分隔线 */
+.container {
+  --ifm-container-width-xl: 1600px;
+}
+
+/* 修改文档布局，移除垂直分隔线 */
+.docPage {
+  border: 0 !important;
+}
+
+/* 移除任何文档页面中的分隔线 */
+.row--no-gutters {
+  margin: 0 !important;
+}
+
+.row--no-gutters > .col {
+  border: none !important;
+  padding: 0 !important;
+}
+
+/* 修改文档布局容器样式 */
+div[class^='docItemContainer'] {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 var(--ifm-spacing-horizontal) !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* 移除边栏右侧的分隔线 */
+aside[class*="docSidebarContainer"] {
+  border-right: none !important;
+  box-shadow: none !important;
+}
+
+/* 为内容区域增加间距 */
+main[class^="docMainContainer"] {
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+}
+
+/* 确保没有任何内嵌的垂直分隔线 */
+*[class*="col--"]::after,
+*[class*="col--"]::before,
+main::after,
+main::before,
+div::after,
+div::before {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 移除所有伪元素产生的分隔线 */
+.theme-doc-sidebar-container::before,
+.theme-doc-sidebar-container::after,
+.theme-doc-sidebar-menu::before,
+.theme-doc-sidebar-menu::after,
+.thin-scrollbar::after {
+  display: none !important;
+  width: 0 !important;
+  opacity: 0 !important;
+} 

@@ -1,0 +1,626 @@
+/**
+ * 代码块专用样式 - Catppuccin Mocha与Latte主题
+ */
+
+:root {
+  /* Catppuccin Mocha Colors (深色主题) */
+  --mocha-rosewater: #f5e0dc;
+  --mocha-flamingo: #f2cdcd;
+  --mocha-pink: #f5c2e7;
+  --mocha-mauve: #cba6f7;
+  --mocha-red: #f38ba8;
+  --mocha-maroon: #eba0ac;
+  --mocha-peach: #fab387;
+  --mocha-yellow: #f9e2af;
+  --mocha-green: #a6e3a1;
+  --mocha-teal: #94e2d5;
+  --mocha-sky: #89dceb;
+  --mocha-sapphire: #74c7ec;
+  --mocha-blue: #89b4fa;
+  --mocha-lavender: #b4befe;
+  --mocha-text: #cdd6f4;
+  --mocha-subtext1: #bac2de;
+  --mocha-subtext0: #a6adc8;
+  --mocha-overlay2: #9399b2;
+  --mocha-overlay1: #7f849c;
+  --mocha-overlay0: #6c7086;
+  --mocha-surface2: #585b70;
+  --mocha-surface1: #45475a;
+  --mocha-surface0: #313244;
+  --mocha-base: #1e1e2e;
+  --mocha-mantle: #181825;
+  --mocha-crust: #11111b;
+
+  /* Catppuccin Latte Colors (亮色主题) */
+  --latte-rosewater: #dc8a78;
+  --latte-flamingo: #dd7878;
+  --latte-pink: #ea76cb;
+  --latte-mauve: #8839ef;
+  --latte-red: #d20f39;
+  --latte-maroon: #e64553;
+  --latte-peach: #fe640b;
+  --latte-yellow: #df8e1d;
+  --latte-green: #40a02b;
+  --latte-teal: #179299;
+  --latte-sky: #04a5e5;
+  --latte-sapphire: #209fb5;
+  --latte-blue: #1e66f5;
+  --latte-lavender: #7287fd;
+  --latte-text: #4c4f69;
+  --latte-subtext1: #5c5f77;
+  --latte-subtext0: #6c6f85;
+  --latte-overlay2: #7c7f93;
+  --latte-overlay1: #8c8fa1;
+  --latte-overlay0: #9ca0b0;
+  --latte-surface2: #acb0be;
+  --latte-surface1: #bcc0cc;
+  --latte-surface0: #ccd0da;
+  --latte-base: #ECF4FA; /* 自定义亮色背景 */
+  --latte-mantle: #e0eaf2;
+  --latte-crust: #d4e0ea;
+}
+
+/* ============= 通用代码块样式 ============= */
+
+/* 代码块容器样式 */
+div[class^="codeBlockContainer"],
+.theme-code-block {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important;
+  border-radius: 8px !important;
+  margin-bottom: 1.5rem !important;
+  transition: box-shadow 0.3s ease !important;
+  overflow: hidden !important;
+}
+
+div[class^="codeBlockContainer"]:hover,
+.theme-code-block:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* ============= 行号基本样式 ============= */
+
+/* 暂时禁用所有行号相关样式 */
+/*
+.prism-code {
+  counter-reset: line-number !important;
+}
+
+.prism-code.line-numbers {
+  padding-left: 3.8em !important;
+  counter-reset: linenumber !important;
+}
+
+.prism-code .line-numbers-rows {
+  position: absolute !important;
+  pointer-events: none !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 3em !important;
+  height: 100% !important;
+  border-right: 1px solid var(--mocha-surface1) !important;
+  font-size: 100% !important;
+  font-family: monospace !important;
+  text-align: right !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}
+
+.prism-code .line-numbers-rows > span {
+  display: block !important;
+  counter-increment: linenumber !important;
+  pointer-events: none !important;
+  padding-right: 0.8em !important;
+}
+
+.prism-code .line-numbers-rows > span:before {
+  content: counter(linenumber) !important;
+  color: var(--mocha-overlay0) !important;
+  display: block !important;
+  padding-right: 0.8em !important;
+  text-align: right !important;
+}
+
+.prism-code .token-line {
+  min-height: 1.5em !important;
+  line-height: 1.5 !important;
+}
+
+.theme-code-block pre.prism-code {
+  margin: 0 !important;
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
+}
+*/
+
+/* ============= 深色主题 Catppuccin Mocha ============= */
+
+/* 代码块背景和文本颜色 */
+html[data-theme='dark'] div[class^="codeBlockContainer"],
+html[data-theme='dark'] .theme-code-block,
+html[data-theme='dark'] pre.prism-code {
+  background-color: var(--mocha-base) !important;
+  color: var(--mocha-text) !important;
+}
+
+/* 代码块顶部语言标签 */
+html[data-theme='dark'] div[class^="codeBlockTitle"] {
+  background-color: var(--mocha-mantle) !important;
+  color: var(--mocha-subtext1) !important;
+  border-bottom: 1px solid var(--mocha-surface0) !important;
+}
+
+/* 行号颜色 - 深色主题 */
+html[data-theme='dark'] .line-numbers-rows > span:before {
+  color: var(--mocha-overlay0) !important;
+}
+
+html[data-theme='dark'] .line-numbers-rows {
+  border-right: 1px solid var(--mocha-surface1) !important;
+}
+
+/* 深色主题语法高亮 - 移除所有斜体样式 */
+html[data-theme='dark'] .token.comment,
+html[data-theme='dark'] .token.prolog,
+html[data-theme='dark'] .token.doctype,
+html[data-theme='dark'] .token.cdata {
+  color: var(--mocha-overlay0) !important;
+  font-style: normal !important; /* 移除斜体 */
+}
+
+html[data-theme='dark'] .token.punctuation {
+  color: var(--mocha-subtext0) !important;
+}
+
+html[data-theme='dark'] .token.namespace {
+  color: var(--mocha-yellow) !important; /* 命名空间使用黄色 #F9E2AF */
+  opacity: 1 !important;
+  font-style: normal !important; /* 移除斜体 */
+}
+
+html[data-theme='dark'] .token.property,
+html[data-theme='dark'] .token.tag,
+html[data-theme='dark'] .token.constant,
+html[data-theme='dark'] .token.symbol {
+  color: var(--mocha-blue) !important;
+  font-style: normal !important; /* 移除斜体 */
+}
+
+html[data-theme='dark'] .token.boolean,
+html[data-theme='dark'] .token.number {
+  color: var(--mocha-peach) !important;
+  font-style: normal !important; /* 移除斜体 */
+}
+
+html[data-theme='dark'] .token.selector,
+html[data-theme='dark'] .token.attr-name,
+html[data-theme='dark'] .token.string,
+html[data-theme='dark'] .token.char,
+html[data-theme='dark'] .token.builtin {
+  color: var(--mocha-green) !important;
+  font-style: normal !important; /* 移除斜体 */
+}
+
+html[data-theme='dark'] .token.operator,
+html[data-theme='dark'] .token.entity,
+html[data-theme='dark'] .token.url,
+html[data-theme='dark'] .language-css .token.string,
+html[data-theme='dark'] .style .token.string {
+  color: var(--mocha-sky) !important;
+  font-style: normal !important; /* 移除斜体 */
+}
+
+html[data-theme='dark'] .token.variable,
+html[data-theme='dark'] .token.parameter {
+  color: var(--mocha-maroon) !important; /* 变量和参数使用红褐色 #EBA0AC */
+  font-style: normal !important; /* 移除斜体 */
+}
+
+html[data-theme='dark'] .token.atrule,
+html[data-theme='dark'] .token.attr-value,
+html[data-theme='dark'] .token.function {
+  color: var(--mocha-blue) !important;
+  font-style: normal !important; /* 移除斜体 */
+}
+
+html[data-theme='dark'] .token.keyword {
+  color: var(--mocha-mauve) !important;
+  font-style: normal !important; /* 移除斜体 */
+}
+
+html[data-theme='dark'] .token.regex,
+html[data-theme='dark'] .token.important {
+  color: var(--mocha-red) !important;
+  font-style: normal !important; /* 移除斜体 */
+}
+
+html[data-theme='dark'] .token.important,
+html[data-theme='dark'] .token.bold {
+  font-weight: bold !important;
+}
+
+/* C++特定语法 - 深色主题 */
+html[data-theme='dark'] .language-cpp .token.keyword {
+  color: var(--mocha-mauve) !important;
+  font-style: normal !important;
+}
+
+html[data-theme='dark'] .language-cpp .token.function {
+  color: var(--mocha-blue) !important;
+  font-style: normal !important;
+}
+
+html[data-theme='dark'] .language-cpp .token.string {
+  color: var(--mocha-green) !important;
+  font-style: normal !important;
+}
+
+html[data-theme='dark'] .language-cpp .token.number {
+  color: var(--mocha-peach) !important;
+  font-style: normal !important;
+}
+
+html[data-theme='dark'] .language-cpp .token.operator {
+  color: var(--mocha-sky) !important;
+  font-style: normal !important;
+}
+
+html[data-theme='dark'] .language-cpp .token.comment {
+  color: var(--mocha-overlay0) !important;
+  font-style: normal !important;
+}
+
+html[data-theme='dark'] .language-cpp .token.class-name {
+  color: var(--mocha-yellow) !important;
+  font-style: normal !important;
+}
+
+/* 特别针对C++的std命名空间和类型处理 */
+html[data-theme='dark'] .language-cpp .token.namespace {
+  color: var(--mocha-yellow) !important; /* std命名空间使用黄色 #F9E2AF */
+  font-style: normal !important;
+}
+
+/* 确保std::后面跟着的类型名也是黄色 */
+html[data-theme='dark'] span.token.namespace + span.token.punctuation + span.token.class-name,
+html[data-theme='dark'] span.token.namespace + span.token.operator + span.token.class-name {
+  color: var(--mocha-yellow) !important; /* std::vector等类型使用黄色 #F9E2AF */
+  font-style: normal !important;
+}
+
+html[data-theme='dark'] .language-cpp .token.preprocessor {
+  color: var(--mocha-teal) !important;
+}
+
+html[data-theme='dark'] .language-cpp .token.parameter {
+  color: var(--mocha-maroon) !important; /* 函数参数使用红褐色 #EBA0AC */
+  font-style: normal !important;
+}
+
+/* 高亮行 - 深色主题 */
+html[data-theme='dark'] .theme-code-block-highlighted-line {
+  background-color: rgba(99, 102, 126, 0.35) !important;
+  display: block !important;
+  margin: 0 -1rem !important;
+  padding: 0 1rem !important;
+  border-left: 3px solid var(--mocha-yellow) !important;
+}
+
+/* 滚动条样式 - 深色主题 */
+html[data-theme='dark'] pre::-webkit-scrollbar {
+  width: 12px !important;
+  height: 12px !important;
+}
+
+html[data-theme='dark'] pre::-webkit-scrollbar-track {
+  background: var(--mocha-mantle) !important;
+  border-radius: 0 !important;
+}
+
+html[data-theme='dark'] pre::-webkit-scrollbar-thumb {
+  background: var(--mocha-surface1) !important;
+  border-radius: 6px !important;
+  border: 3px solid var(--mocha-mantle) !important;
+}
+
+html[data-theme='dark'] pre::-webkit-scrollbar-thumb:hover {
+  background: var(--mocha-surface2) !important;
+}
+
+/* 复制按钮 - 深色主题 */
+html[data-theme='dark'] button[class^="copyButton"] {
+  background-color: var(--mocha-surface0) !important;
+  color: var(--mocha-subtext0) !important;
+  border: none !important;
+  border-radius: 4px !important;
+  opacity: 0.7 !important;
+}
+
+html[data-theme='dark'] button[class^="copyButton"]:hover {
+  background-color: var(--mocha-surface1) !important;
+  color: var(--mocha-text) !important;
+  opacity: 1 !important;
+}
+
+/* ============= 亮色主题 Catppuccin Latte ============= */
+
+/* 代码块背景和文本颜色 */
+html[data-theme='light'] div[class^="codeBlockContainer"],
+html[data-theme='light'] .theme-code-block,
+html[data-theme='light'] pre.prism-code {
+  background-color: var(--latte-base) !important;
+  color: var(--latte-text) !important;
+}
+
+/* 代码块顶部语言标签 */
+html[data-theme='light'] div[class^="codeBlockTitle"] {
+  background-color: var(--latte-mantle) !important;
+  color: var(--latte-subtext1) !important;
+  border-bottom: 1px solid var(--latte-surface0) !important;
+}
+
+/* 行号颜色 - 亮色主题 */
+html[data-theme='light'] .line-numbers-rows > span:before {
+  color: var(--latte-overlay0) !important;
+}
+
+html[data-theme='light'] .line-numbers-rows {
+  border-right: 1px solid var(--latte-surface1) !important;
+}
+
+/* 亮色主题语法高亮 - 移除所有斜体样式 */
+html[data-theme='light'] .token.comment,
+html[data-theme='light'] .token.prolog,
+html[data-theme='light'] .token.doctype,
+html[data-theme='light'] .token.cdata {
+  color: var(--latte-overlay0) !important;
+}
+
+html[data-theme='light'] .token.punctuation {
+  color: var(--latte-subtext0) !important;
+}
+
+html[data-theme='light'] .token.namespace {
+  color: var(--latte-yellow) !important; /* 命名空间使用黄色 */
+  opacity: 1 !important;
+}
+
+html[data-theme='light'] .token.property,
+html[data-theme='light'] .token.tag,
+html[data-theme='light'] .token.constant,
+html[data-theme='light'] .token.symbol {
+  color: var(--latte-blue) !important;
+}
+
+html[data-theme='light'] .token.boolean,
+html[data-theme='light'] .token.number {
+  color: var(--latte-peach) !important;
+}
+
+html[data-theme='light'] .token.selector,
+html[data-theme='light'] .token.attr-name,
+html[data-theme='light'] .token.string,
+html[data-theme='light'] .token.char,
+html[data-theme='light'] .token.builtin {
+  color: var(--latte-green) !important;
+}
+
+html[data-theme='light'] .token.operator,
+html[data-theme='light'] .token.entity,
+html[data-theme='light'] .token.url,
+html[data-theme='light'] .language-css .token.string,
+html[data-theme='light'] .style .token.string {
+  color: var(--latte-sky) !important;
+}
+
+html[data-theme='light'] .token.variable,
+html[data-theme='light'] .token.parameter {
+  color: var(--latte-maroon) !important; /* 变量和参数使用红褐色 */
+}
+
+html[data-theme='light'] .token.atrule,
+html[data-theme='light'] .token.attr-value,
+html[data-theme='light'] .token.function {
+  color: var(--latte-blue) !important;
+}
+
+html[data-theme='light'] .token.keyword {
+  color: var(--latte-mauve) !important;
+}
+
+html[data-theme='light'] .token.regex,
+html[data-theme='light'] .token.important {
+  color: var(--latte-red) !important;
+}
+
+html[data-theme='light'] .token.important,
+html[data-theme='light'] .token.bold {
+  font-weight: bold !important;
+}
+
+/* C++特定语法 - 亮色主题 */
+html[data-theme='light'] .language-cpp .token.keyword {
+  color: var(--latte-mauve) !important;
+}
+
+html[data-theme='light'] .language-cpp .token.function {
+  color: var(--latte-blue) !important;
+}
+
+html[data-theme='light'] .language-cpp .token.string {
+  color: var(--latte-green) !important;
+}
+
+html[data-theme='light'] .language-cpp .token.number {
+  color: var(--latte-peach) !important;
+}
+
+html[data-theme='light'] .language-cpp .token.operator {
+  color: var(--latte-sky) !important;
+}
+
+html[data-theme='light'] .language-cpp .token.comment {
+  color: var(--latte-overlay0) !important;
+}
+
+html[data-theme='light'] .language-cpp .token.class-name {
+  color: var(--latte-yellow) !important;
+}
+
+/* 特别针对C++的std命名空间和类型处理 - 亮色主题 */
+html[data-theme='light'] .language-cpp .token.namespace {
+  color: var(--latte-yellow) !important; /* std命名空间使用黄色 */
+}
+
+/* 确保std::后面跟着的类型名也是黄色 - 亮色主题 */
+html[data-theme='light'] span.token.namespace + span.token.punctuation + span.token.class-name,
+html[data-theme='light'] span.token.namespace + span.token.operator + span.token.class-name {
+  color: var(--latte-yellow) !important; /* std::vector等类型使用黄色 */
+}
+
+html[data-theme='light'] .language-cpp .token.preprocessor {
+  color: var(--latte-teal) !important;
+}
+
+html[data-theme='light'] .language-cpp .token.parameter {
+  color: var(--latte-maroon) !important; /* 函数参数使用红褐色 */
+}
+
+/* 高亮行 - 亮色主题 */
+html[data-theme='light'] .theme-code-block-highlighted-line {
+  background-color: var(--latte-surface0) !important;
+  display: block !important;
+  margin: 0 calc(-1 * var(--ifm-pre-padding)) !important;
+  padding: 0 var(--ifm-pre-padding) !important;
+  border-left: 3px solid var(--latte-yellow) !important;
+}
+
+/* 滚动条样式 - 亮色主题 */
+html[data-theme='light'] pre::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+html[data-theme='light'] pre::-webkit-scrollbar-track {
+  background: var(--latte-base) !important;
+}
+
+html[data-theme='light'] pre::-webkit-scrollbar-thumb {
+  background: var(--latte-surface1) !important;
+  border-radius: 5px !important;
+  border: 2px solid var(--latte-base) !important;
+}
+
+html[data-theme='light'] pre::-webkit-scrollbar-thumb:hover {
+  background: var(--latte-surface2) !important;
+}
+
+/* 复制按钮 - 亮色主题 */
+html[data-theme='light'] button[class^="copyButton"] {
+  background-color: var(--latte-surface0) !important;
+  color: var(--latte-subtext0) !important;
+  border: none !important;
+  transition: all 0.2s ease !important;
+}
+
+html[data-theme='light'] button[class^="copyButton"]:hover {
+  background-color: var(--latte-surface1) !important;
+  color: var(--latte-text) !important;
+}
+
+/* 移除所有斜体样式 */
+.token {
+  font-style: normal !important;
+}
+
+/* 确保命名空间和参数的颜色应用 - 全局设置 */
+.token.namespace {
+  color: var(--mocha-yellow) !important; /* #F9E2AF */
+}
+
+.token.parameter {
+  color: var(--mocha-maroon) !important; /* #EBA0AC */
+}
+
+/* 特别针对std命名空间的处理 - 全局设置 */
+.token.namespace + .token.punctuation + .token.namespace,
+.token.namespace + .token.operator + .token.namespace {
+  color: var(--mocha-yellow) !important; /* #F9E2AF */
+}
+
+/* 确保std::vector等类型的颜色 - 全局设置 */
+.token.namespace + .token.punctuation + .token.class-name,
+.token.namespace + .token.operator + .token.class-name {
+  color: var(--mocha-yellow) !important; /* #F9E2AF */
+}
+
+/* 确保行号容器始终可见 */
+.docusaurus-highlight-code-line {
+  display: block !important;
+}
+
+/* 确保C++类型使用黄色 */
+.language-cpp .token.class-name {
+  color: var(--mocha-yellow) !important; /* #F9E2AF */
+}
+
+/* ============= 行号特殊修复 ============= */
+
+/* 确保行号显示 - 使用Docusaurus原生行号类 */
+pre.prism-code.line-numbers {
+  padding-left: 3.8em !important;
+  counter-reset: linenumber !important;
+  white-space: pre !important;
+  overflow: auto !important;
+}
+
+pre.prism-code.line-numbers > code {
+  position: relative !important;
+  white-space: inherit !important;
+  overflow: visible !important;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute !important;
+  pointer-events: none !important;
+  top: 0 !important;
+  font-size: 100% !important;
+  left: -3.8em !important;
+  width: 3em !important;
+  letter-spacing: -1px !important;
+  border-right: 1px solid var(--mocha-surface1) !important;
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  
+  /* 确保行号容器在代码块内部 */
+  height: 100% !important;
+  display: block !important;
+  overflow: hidden !important;
+  
+  /* 修复行号与代码行对齐问题 */
+  padding-top: 1em !important;
+  padding-bottom: 1em !important;
+  margin-top: -1em !important;
+  margin-bottom: -1em !important;
+  background-color: var(--mocha-base) !important;
+}
+
+.line-numbers-rows > span {
+  display: block !important;
+  counter-increment: linenumber !important;
+  pointer-events: none !important;
+  padding-right: 0.8em !important;
+  min-height: 1.5em !important;
+  line-height: 1.5 !important;
+}
+
+.line-numbers-rows > span:before {
+  content: counter(linenumber) !important;
+  color: #999 !important;
+  display: block !important;
+  padding-right: 0.8em !important;
+  text-align: right !important;
+} 

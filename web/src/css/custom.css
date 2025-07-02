@@ -1,0 +1,461 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --animation-duration: 0.3s;
+  --page-transition-duration: 0.3s; /* 页面转场动画持续时间 */
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --ifm-background-color: #0D1118 !important;
+  --ifm-background-surface-color: #0D1118 !important;
+  --ifm-contrast-background-color: #161b24;
+  --ifm-contrast-foreground-color: #8b949e;
+  --ifm-font-color-base: #c9d1d9;
+}
+
+/* Force dark mode background override */
+html[data-theme='dark'] {
+  background-color: #0D1118 !important;
+  scroll-behavior: smooth;
+}
+
+html[data-theme='dark'] body {
+  background-color: #0D1118 !important;
+}
+
+/* Override any other elements that might have background colors */
+html[data-theme='dark'] .navbar,
+html[data-theme='dark'] .main-wrapper,
+html[data-theme='dark'] .theme-doc-sidebar-container,
+html[data-theme='dark'] div[class*="docSidebarContainer"],
+html[data-theme='dark'] div[class*="docMainContainer"],
+html[data-theme='dark'] div[class*="docItemCol"],
+html[data-theme='dark'] div[class*="docItemContainer"] {
+  background-color: #0D1118 !important;
+}
+
+/* Smooth transitions for theme switching */
+html {
+  transition: all var(--animation-duration);
+  scroll-behavior: smooth;
+}
+
+/* 侧边栏项目过渡效果 - 移除下划线 */
+.menu__link {
+  transition: background-color var(--animation-duration), color var(--animation-duration);
+}
+
+/* Custom heading styles with animations */
+.markdown h1, .markdown h2, .markdown h3 {
+  position: relative;
+  overflow: hidden;
+}
+
+.markdown h1::after, .markdown h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--ifm-color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--animation-duration) ease;
+}
+
+.markdown h1:hover::after, .markdown h2:hover::after {
+  transform: scaleX(1);
+}
+
+/* Catppuccin Mocha Colors */
+:root {
+  --mocha-rosewater: #f5e0dc;
+  --mocha-flamingo: #f2cdcd;
+  --mocha-pink: #f5c2e7;
+  --mocha-mauve: #cba6f7;
+  --mocha-red: #f38ba8;
+  --mocha-maroon: #eba0ac;
+  --mocha-peach: #fab387;
+  --mocha-yellow: #f9e2af;
+  --mocha-green: #a6e3a1;
+  --mocha-teal: #94e2d5;
+  --mocha-sky: #89dceb;
+  --mocha-sapphire: #74c7ec;
+  --mocha-blue: #89b4fa;
+  --mocha-lavender: #b4befe;
+  --mocha-text: #cdd6f4;
+  --mocha-subtext1: #bac2de;
+  --mocha-subtext0: #a6adc8;
+  --mocha-overlay2: #9399b2;
+  --mocha-overlay1: #7f849c;
+  --mocha-overlay0: #6c7086;
+  --mocha-surface2: #585b70;
+  --mocha-surface1: #45475a;
+  --mocha-surface0: #313244;
+  --mocha-base: #1e1e2e;
+  --mocha-mantle: #181825;
+  --mocha-crust: #11111b;
+}
+
+/* 直接覆盖Docusaurus的Prism样式 */
+html[data-theme='dark'] .prism-code,
+html[data-theme='dark'] div[class*="codeBlockContainer"] pre,
+html[data-theme='dark'] pre[class*="prism-code"] {
+  background-color: var(--mocha-base) !important;
+  color: var(--mocha-text) !important;
+}
+
+/* 确保代码块显示行号 - 暂时禁用 */
+/*
+html[data-theme='dark'] div[class*="codeBlockContainer"] pre,
+html[data-theme='dark'] pre[class*="prism-code"] {
+  counter-reset: line-number;
+}
+
+html[data-theme='dark'] div[class*="codeBlockContainer"] pre .token-line,
+html[data-theme='dark'] pre[class*="prism-code"] .token-line {
+  counter-increment: line-number;
+  position: relative;
+  padding-left: 3.5rem;
+  min-height: 1.5em;
+}
+
+html[data-theme='dark'] div[class*="codeBlockContainer"] pre .token-line::before,
+html[data-theme='dark'] pre[class*="prism-code"] .token-line::before {
+  content: counter(line-number);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.5rem;
+  text-align: right;
+  color: var(--mocha-overlay0);
+  opacity: 0.6;
+  padding-right: 1rem;
+  border-right: 1px solid var(--mocha-surface1);
+  user-select: none;
+}
+*/
+
+/* Catppuccin Mocha syntax highlighting - 增加选择器优先级 */
+html[data-theme='dark'] .token.comment,
+html[data-theme='dark'] .token.prolog,
+html[data-theme='dark'] .token.doctype,
+html[data-theme='dark'] .token.cdata {
+  color: var(--mocha-overlay0) !important;
+}
+
+html[data-theme='dark'] .token.punctuation {
+  color: var(--mocha-subtext0) !important;
+}
+
+html[data-theme='dark'] .token.property,
+html[data-theme='dark'] .token.tag,
+html[data-theme='dark'] .token.constant,
+html[data-theme='dark'] .token.symbol {
+  color: var(--mocha-blue) !important;
+}
+
+html[data-theme='dark'] .token.boolean,
+html[data-theme='dark'] .token.number {
+  color: var(--mocha-peach) !important;
+}
+
+html[data-theme='dark'] .token.selector,
+html[data-theme='dark'] .token.attr-name,
+html[data-theme='dark'] .token.string,
+html[data-theme='dark'] .token.char,
+html[data-theme='dark'] .token.builtin {
+  color: var(--mocha-green) !important;
+}
+
+html[data-theme='dark'] .token.operator,
+html[data-theme='dark'] .token.entity,
+html[data-theme='dark'] .token.url,
+html[data-theme='dark'] .language-css .token.string,
+html[data-theme='dark'] .style .token.string,
+html[data-theme='dark'] .token.variable {
+  color: var(--mocha-sky) !important;
+}
+
+html[data-theme='dark'] .token.atrule,
+html[data-theme='dark'] .token.attr-value,
+html[data-theme='dark'] .token.function {
+  color: var(--mocha-yellow) !important;
+}
+
+html[data-theme='dark'] .token.keyword {
+  color: var(--mocha-mauve) !important;
+}
+
+html[data-theme='dark'] .token.regex,
+html[data-theme='dark'] .token.important {
+  color: var(--mocha-red) !important;
+}
+
+html[data-theme='dark'] .token.important,
+html[data-theme='dark'] .token.bold {
+  font-weight: bold !important;
+}
+
+html[data-theme='dark'] .token.italic {
+  font-style: italic !important;
+}
+
+html[data-theme='dark'] .token.entity {
+  cursor: help !important;
+}
+
+/* Docusaurus 突出显示的代码行 */
+html[data-theme='dark'] .docusaurus-highlighted-code-line,
+html[data-theme='dark'] .theme-code-block-highlighted-line {
+  background-color: var(--mocha-surface0) !important;
+  display: block;
+  margin: 0 -1rem;
+  padding: 0 1rem;
+}
+
+/* 为确保行号在高亮行中仍然可见 */
+html[data-theme='dark'] .docusaurus-highlighted-code-line::before,
+html[data-theme='dark'] .theme-code-block-highlighted-line::before {
+  opacity: 0.8;
+}
+
+/* Card styling for better visual appearance */
+.card {
+  border-radius: 8px;
+  transition: transform var(--animation-duration), box-shadow var(--animation-duration), 
+              background-color var(--animation-duration), color var(--animation-duration), 
+              border-color var(--animation-duration) !important;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* 移除所有导航链接的下划线效果 */
+.navbar__link {
+  position: relative;
+  transition: all var(--animation-duration);
+}
+
+/* 移除所有菜单链接的下划线效果 */
+.menu__link::after,
+.navbar__link::after {
+  display: none !important;
+}
+
+/* Custom scroll progress bar */
+.scroll-progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--ifm-color-primary);
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* Hide the footer completely */
+.footer {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  visibility: hidden !important;
+  overflow: hidden !important;
+}
+
+/* 完全移除所有垂直分隔线 */
+
+/* 移除侧边栏容器的垂直分隔线 */
+.theme-doc-sidebar-container::before,
+.theme-doc-sidebar-container::after,
+div[class*="docSidebarContainer"]::before,
+div[class*="docSidebarContainer"]::after {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 移除文档布局相关的所有分隔线 */
+.row .col.col--3::after,
+.row .col--3::after,
+.row::before,
+.row::after,
+.docs-wrapper::before,
+.docs-wrapper::after,
+main[class*="docMainContainer"]::before,
+main[class*="docMainContainer"]::after,
+div[class*="docItemContainer"]::before,
+div[class*="docItemContainer"]::after,
+aside::before,
+aside::after {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 移除菜单相关的所有分隔线 */
+.menu::before,
+.menu::after,
+.menu__list::before,
+.menu__list::after,
+.menu__list-item::before,
+.menu__list-item::after {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 移除主容器相关的所有分隔线 */
+.main-wrapper::before,
+.main-wrapper::after,
+.container::before,
+.container::after {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 移除左侧分隔线 - 更全面的选择器 */
+.thin-scrollbar::after,
+.thin-scrollbar::before,
+[class*="sidebar"]::after,
+[class*="sidebar"]::before {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  visibility: hidden !important;
+}
+
+/* 修复左侧分隔线点击BUG */
+.thin-scrollbar::after,
+.docs-wrapper::after,
+.main-wrapper::after,
+.navbar-sidebar__backdrop,
+.navbar-sidebar::after,
+.menu::after,
+div[class*="docSidebarContainer"]::after,
+div[class*="docItemCol"]::before,
+div[class*="collapsedDocSidebar"]::after {
+  pointer-events: none !important;
+}
+
+/* 专门针对右侧边框线 */
+.main-wrapper::before,
+.main-wrapper::after,
+div[class*="docItemContainer"]::before,
+div[class*="docItemContainer"]::after,
+nav::before,
+nav::after {
+  pointer-events: none !important;
+}
+
+/* 移除可能存在的分隔线点击事件 */
+.menu--show {
+  position: relative;
+}
+
+.menu--show::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/* 可能存在的右侧TOC分隔线 */
+div[role="complementary"]::after,
+div[role="complementary"]::before {
+  display: none !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  visibility: hidden !important;
+}
+
+/* --- 强制C++ std命名空间与类名颜色为 #F9E2AF --- */
+html[data-theme='dark'] .language-cpp .token.namespace,
+html[data-theme='dark'] .language-cpp .token.class-name,
+html[data-theme='dark'] span.token.namespace + span.token.punctuation + span.token.class-name,
+html[data-theme='dark'] span.token.namespace + span.token.operator + span.token.class-name {
+  color: #F9E2AF !important;
+}
+
+html[data-theme='light'] .language-cpp .token.namespace,
+html[data-theme='light'] .language-cpp .token.class-name,
+html[data-theme='light'] span.token.namespace + span.token.punctuation + span.token.class-name,
+html[data-theme='light'] span.token.namespace + span.token.operator + span.token.class-name {
+  color: #F9E2AF !important;
+}
+
+/* === Light theme overrides to ensure full theme switch === */
+html[data-theme='light'] {
+  background-color: #ECF4FA !important; /* Catppuccin Latte base */
+}
+
+html[data-theme='light'] body {
+  background-color: #ECF4FA !important;
+}
+
+/* Apply light background to common layout containers */
+html[data-theme='light'] .navbar,
+html[data-theme='light'] .main-wrapper,
+html[data-theme='light'] .theme-doc-sidebar-container,
+html[data-theme='light'] div[class*="docSidebarContainer"],
+html[data-theme='light'] div[class*="docMainContainer"],
+html[data-theme='light'] div[class*="docItemCol"],
+html[data-theme='light'] div[class*="docItemContainer"] {
+  background-color: #ECF4FA !important; /* Latte base */
+}
+
+/* 修复卡片(思考问题)组件在主题切换时的样式 */
+html[data-theme='light'] .card {
+  background-color: #e6edf3 !important;
+  color: #4c4f69 !important; /* Latte text color */
+  border: 1px solid #ccd0da !important; /* Latte surface0 */
+  transition: background-color var(--animation-duration), color var(--animation-duration), transform var(--animation-duration), box-shadow var(--animation-duration);
+}
+
+html[data-theme='light'] .card:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+html[data-theme='light'] .card__header h3 {
+  color: #4c4f69 !important; /* Latte text color */
+}
+
+/* Disable click on navbar logo */
+.navbar__logo {
+  pointer-events: none;
+  cursor: default;
+} 
