@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunkmodern_cpp_algorithm_programming=self.webpackChunkmodern_cpp_algorithm_programming||[]).push([[634],{192:(r,e,n)=>{n.r(e),n.d(e,{default:()=>c});var t=n(6540),o=n(6347),a=n(6025);const c=function(){return t.createElement(o.rd,{to:(0,a.A)("/docs")})}}}]);
