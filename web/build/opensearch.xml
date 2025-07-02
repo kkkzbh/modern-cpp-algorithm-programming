@@ -4,8 +4,8 @@
   <ShortName>现代C++算法编程教程</ShortName>
   <Description>Search 现代C++算法编程教程</Description>
   <InputEncoding>UTF-8</InputEncoding>
-  <Image width="16" height="16" type="image/x-icon">https://kkkzbh.github.io/modern-cpp-algorithm-programming/img/favicon.ico</Image>
-  <Url type="text/html" method="get" template="https://kkkzbh.github.io/modern-cpp-algorithm-programming/search?q={searchTerms}"/>
-  <Url type="application/opensearchdescription+xml" rel="self" template="https://kkkzbh.github.io/modern-cpp-algorithm-programming/opensearch.xml" />
-  <moz:SearchForm>https://kkkzbh.github.io/modern-cpp-algorithm-programming/</moz:SearchForm>
+  <Image width="16" height="16" type="image/x-icon">https://kkkzbh.github.io/img/favicon.ico</Image>
+  <Url type="text/html" method="get" template="https://kkkzbh.github.io/search?q={searchTerms}"/>
+  <Url type="application/opensearchdescription+xml" rel="self" template="https://kkkzbh.github.io/opensearch.xml" />
+  <moz:SearchForm>https://kkkzbh.github.io/</moz:SearchForm>
 </OpenSearchDescription>
