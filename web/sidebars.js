@@ -15,6 +15,7 @@
 const sidebars = {
   tutorialSidebar: [
     'homepage',
+    'start',
   ],
 };
 

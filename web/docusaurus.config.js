@@ -7,7 +7,7 @@ const config = {
   tagline: 'Modern C++ Algorithm Programming',
   favicon: 'img/favicon.ico',
   url: 'https://kkkzbh.github.io',
-  baseUrl: '/modern-cpp-algorithm-programming/',
+  baseUrl: '/', // Changed from '/modern-cpp-algorithm-programming/' to root. TODO: adjust if deploying under subfolder.
   organizationName: 'your-org',
   projectName: 'modern-cpp-algorithm-programming',
   
