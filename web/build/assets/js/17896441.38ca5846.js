@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmodern_cpp_algorithm_programming=self.webpackChunkmodern_cpp_algorithm_programming||[]).push([[401],{2691:(e,r,n)=>{n.r(r),n.d(r,{default:()=>m});var t=n(8168),a=n(6540),c=n(3022);function m(e){return a.createElement(c.A,(0,t.A)({},e,{className:"doc-content-transition"}))}}}]);

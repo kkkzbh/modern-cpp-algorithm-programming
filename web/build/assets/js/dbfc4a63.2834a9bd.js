@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmodern_cpp_algorithm_programming=self.webpackChunkmodern_cpp_algorithm_programming||[]).push([[828],{1966:e=>{e.exports=JSON.parse('{"name":"docusaurus-plugin-content-docs","id":"default"}')}}]);
